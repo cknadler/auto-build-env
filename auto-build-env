@@ -30,14 +30,16 @@ end
 # Check dependencies
 missing_dependencies = Array.new
 
+header = purpify("build-env:")
+
 dependencies.each do |dependency|
-  puts "#{purpify "build-env:"} #{greenify "checking #{dependency}"}"
+  puts "#{header} checking #{dependency}"
   if not system("which #{dependency}", :out => "/dev/null")
     missing_dependencies.push dependency
   end
 end
 
-if not missing_dependencies.empty?
+unless missing_dependencies.empty?
   puts redify "build-env failed..."
 
   missing_dependencies.each do |missing|
@@ -50,7 +52,7 @@ end
 
 # Execute build commands
 commands.each do |command|
-  puts "#{purpify "build-env:"} #{greenify "#{command}"}"
+  puts "#{header} running #{command}"
   system("#{command}")
 end
 
