@@ -8,7 +8,9 @@ Throw the `auto-build-env` script in the root directory of your project using au
 
 Then, to set up your environment, run: 
 
-`./auto-build-env`
+```
+./auto-build-env
+```
 
 ## Copyright
 
