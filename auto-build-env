@@ -45,7 +45,7 @@ DEPENDENCIES.each do |dependency|
 end
 
 unless missing_deps.empty?
-  puts header "build-env failed..."
+  puts heading "build-env failed..."
   missing_deps.each do |missing|
     puts redify "Missing: #{missing}"
   end
